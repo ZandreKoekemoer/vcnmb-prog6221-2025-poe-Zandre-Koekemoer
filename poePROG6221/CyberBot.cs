@@ -26,13 +26,13 @@ namespace poePROG6221.Bot
             synth.SelectVoiceByHints(VoiceGender.Female);
             Responses();
         }
-
+        //After user has entered his name,program runs to the next part of the program
         public void Start()
         {
             Utilities.PrintWithColor(synth, $"Hi {userName}, I'm here to help you stay safe online.", ConsoleColor.Cyan);
 
             ResponseHandler respond = (message, color) => Utilities.PrintWithColor(synth, message, color);
-
+            //if the user has entered his name,bot asks user on what he wants to know
             while (true)
             {
                 Console.WriteLine("\nAsk me about phishing, password, malware, privacy or scams. Type 'exit' to quit.");
@@ -40,6 +40,7 @@ namespace poePROG6221.Bot
                 string input = Console.ReadLine()?.Trim().ToLower();
 
                 if (input == "exit") break;
+                //If user hasnt entered anything,the Bot replies with the statement saying that he needs to type something
                 if (string.IsNullOrEmpty(input))
                 {
                     respond("Please type something.", ConsoleColor.Red);
@@ -67,7 +68,7 @@ namespace poePROG6221.Bot
 
             keywordResponses = new Dictionary<string, List<string>>
             {
-                //If user enters an option multiple times,it will cycle to the next definition
+                //If user enters an option multiple times,it will cycle to the next answer in line
                 { "phishing", new List<string>
                 {
                     "Phishing is a scam where attackers steal personal info using fake emails or sites.",
@@ -135,6 +136,7 @@ namespace poePROG6221.Bot
                     // I used this to randomly select a different chatbot response each time for variety and natural conversation flow.
 
                     var responses = keywordResponses[keyword];
+                    //If user asks about the same option,it moves onto the next answer
                     var randomResponse = responses[new Random().Next(responses.Count)];
                     Utilities.PrintWithColor(synth, randomResponse, ConsoleColor.Yellow);
                     // Shows a helpful tip after the main answer
