@@ -1,4 +1,4 @@
-HOW TO RUN PROJECT
+#HOW TO RUN PROJECT
 1.Download the source code files from the repository. 
 2. Ensure you're using Visual Studio 2022. 
 3. The project is built with .NET Framework 8.0. Make sure this version is installed.
@@ -7,7 +7,7 @@ HOW TO RUN PROJECT
 6. Run the Program:
 7. click the Start button to run.
 
-FEUTURES
+#FEUTURES
 *Keyword Recognition
 *Memory and Recall
 *Sentiment Detection
@@ -16,7 +16,7 @@ FEUTURES
 
 YT: https://youtu.be/CoLbbMFmlPE
 
-REFERENCES
+#REFERENCES
 /*Stack Overflow. 2021. How to create a Dictionary of List<string> in C#. (Version 2.0) [Source code] https://stackoverflow.com/questions/65588009/how-to-create-a-dictionary-of-liststring. [Accessed 23 May 2025]
 
 Microsoft. 2023. Random.Next Method (System). (Version 2.0) [Source code] https://learn.microsoft.com/en-us/dotnet/api/system.random.next. [Accessed 23 May 2025]
