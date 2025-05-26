@@ -8,11 +8,11 @@
 7. click the Start button to run.
 
 # FEUTURES
-*Keyword Recognition
-*Memory and Recall
-*Sentiment Detection
-*Error handling
-*Code optimisation
+* Keyword Recognition
+* Memory and Recall
+* Sentiment Detection
+* Error handling
+* Code optimisation
 
 YT: https://youtu.be/CoLbbMFmlPE
 
