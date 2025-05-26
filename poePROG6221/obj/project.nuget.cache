@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "8jP9zTgH3p0=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\zandr\\source\\repos\\poePROG6221\\poePROG6221\\poePROG6221.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\zandr\\.nuget\\packages\\system.speech\\9.0.4\\system.speech.9.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}
