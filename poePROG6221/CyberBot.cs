@@ -24,7 +24,7 @@ namespace poePROG6221.Bot
             userName = name;
             synth = new SpeechSynthesizer();
             synth.SelectVoiceByHints(VoiceGender.Female);
-            LoadResponses();
+            Responses();
         }
 
         public void Start()
@@ -46,11 +46,11 @@ namespace poePROG6221.Bot
                     continue;
                 }
 
-                if (HandleCombinedSentiment(input)) continue;
+                if (CombinedSentiment(input)) continue;
                 if (HandleSentiment(input)) continue;
-                if (HandleInterest(input)) continue;
-                if (HandleConfusionOrClarification(input)) continue;
-                if (RespondToKeyword(input)) continue;
+                if (Interest(input)) continue;
+                if (Confusion(input)) continue;
+                if (Keyword(input)) continue;
 
                 respond("I don’t understand that. Try keywords like 'phishing' or 'password'.", ConsoleColor.Red);
             }
@@ -58,7 +58,7 @@ namespace poePROG6221.Bot
             respond("Thanks for chatting. Stay safe!", ConsoleColor.Green);
         }
 
-        private void LoadResponses()
+        private void Responses()
         {
             // Reference Stack Overflow. How to create a Dictionary of List<string> in C#.
 
@@ -123,7 +123,7 @@ namespace poePROG6221.Bot
             };
         }
 
-        private bool RespondToKeyword(string input)
+        private bool Keyword(string input)
         {
             foreach (var keyword in keywordResponses.Keys)
             {
@@ -167,7 +167,7 @@ namespace poePROG6221.Bot
             return false;
         }
 
-        private bool HandleCombinedSentiment(string input)
+        private bool CombinedSentiment(string input)
         {
             foreach (var sentiment in sentimentMap)
             {
@@ -176,7 +176,7 @@ namespace poePROG6221.Bot
                     if (input.Contains(sentiment.Key) && input.Contains(keyword))
                     {
                         Utilities.PrintWithColor(synth, sentiment.Value, ConsoleColor.Magenta);
-                        RespondToKeyword(keyword);
+                        Keyword(keyword);
                         return true;
                     }
                 }
@@ -184,7 +184,7 @@ namespace poePROG6221.Bot
             return false;
         }
 
-        private bool HandleInterest(string input)
+        private bool Interest(string input)
         {
             //If user types in this statement with whatever option he chose,the bot will recognize what the user was interested in and stoe it into his memory
             if (input.Contains("interested in"))
@@ -206,7 +206,7 @@ namespace poePROG6221.Bot
             return false;
         }
 
-        private bool HandleConfusionOrClarification(string input)
+        private bool Confusion(string input)
         {
             // Reference GeeksForGeeks. String.Contains Method in C#.
             // I used this to detect if the user expresses confusion or needs clarification in their input.
@@ -221,7 +221,7 @@ namespace poePROG6221.Bot
                     {
                         //Bot will move on to the the next answer for whatever option the user has chosen
                         Utilities.PrintWithColor(synth, $"No problem! Let's go over {userInterest} again.", ConsoleColor.Cyan);
-                        RespondToKeyword(userInterest);
+                        Keyword(userInterest);
                     }
                     else
                     {
