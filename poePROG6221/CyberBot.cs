@@ -225,6 +225,7 @@ namespace poePROG6221.Bot
                     }
                     else
                     {
+                        //If no topic was mentioned, th bot will reply with this statement to ask what user is referring to
                         Utilities.PrintWithColor(synth, "Sure! Could you tell me what topic you'd like me to explain more?", ConsoleColor.Cyan);
                     }
                     return true;
