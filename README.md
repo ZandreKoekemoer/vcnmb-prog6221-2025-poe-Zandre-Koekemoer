@@ -1,13 +1,20 @@
 HOW TO RUN PROJECT
-1.Download the source code files from the repository. 2. Ensure you're using Visual Studio 2022. 3. The project is built with .NET Framework 8.0. Make sure this version is installed. 4. Open the file in Visual Studio. 5. Install System.Speech.Synthesis and System.Media in Nudget Packet manager. 6. Run the Program: 7. click the Start button to run.
+1.Download the source code files from the repository. 
+2. Ensure you're using Visual Studio 2022. 
+3. The project is built with .NET Framework 8.0. Make sure this version is installed.
+4. Open the file in Visual Studio.
+5. Install System.Speech.Synthesis and System.Media in Nudget Packet manager.
+6. Run the Program:
+7. click the Start button to run.
 
 FEUTURES
-Keyword Recognition
-Memory and Recall
-Sentiment Detection
-Error handling
-Code optimisation
+*Keyword Recognition
+*Memory and Recall
+*Sentiment Detection
+*Error handling
+*Code optimisation
 
+YT: https://youtu.be/CoLbbMFmlPE
 
 REFERENCES
 /*Stack Overflow. 2021. How to create a Dictionary of List<string> in C#. (Version 2.0) [Source code] https://stackoverflow.com/questions/65588009/how-to-create-a-dictionary-of-liststring. [Accessed 23 May 2025]
