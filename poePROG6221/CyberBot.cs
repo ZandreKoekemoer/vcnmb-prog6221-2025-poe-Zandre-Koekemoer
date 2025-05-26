@@ -15,7 +15,7 @@ namespace poePROG6221.Bot
 
         // Reference Microsoft Docs. Delegates - C# Programming Guide.
 
-        // A delegate is a type-safe function pointer used to call methods indirectly.
+        // According to Microsoft Docs (2023) A delegate is a type-safe function pointer used to call methods indirectly.
         // I used it here to simplify response output handling.
         private delegate void ResponseHandler(string message, ConsoleColor color);
 
@@ -62,7 +62,7 @@ namespace poePROG6221.Bot
         {
             // Reference Stack Overflow. How to create a Dictionary of List<string> in C#.
 
-            // The reference demonstrates how to organize multiple values under a single key using List<string> within a Dictionary.
+            // According to Stack OverFlow (2021) It demonstrates how to organize multiple values under a single key using List<string> within a Dictionary.
             // I used this approach to store multiple possible responses for each cybersecurity keyword in my chatbot.
 
             keywordResponses = new Dictionary<string, List<string>>
@@ -131,7 +131,7 @@ namespace poePROG6221.Bot
                 {
                     // Reference Microsoft. Random.Next Method (System).
 
-                    // This documentation explains how to use the Random class to generate pseudo-random numbers for indexing purposes.
+                    // According to Microsoft(2023) This documentation explains how to use the Random class to generate pseudo-random numbers for indexing purposes.
                     // I used this to randomly select a different chatbot response each time for variety and natural conversation flow.
 
                     var responses = keywordResponses[keyword];
@@ -153,8 +153,8 @@ namespace poePROG6221.Bot
         {
             // Reference C# Corner. Understanding Dictionary in C#.
 
-            // The article describes how to use a Dictionary<string, string> to associate related text values for simplified lookup.
-            // I used this to map user sentiment (e.g., 'worried', 'frustrated') to helpful emotional responses in the chatbot.
+            // According to C# Corner (2022) The article describes how to use a Dictionary<string, string> to associate related text values for simplified lookup.
+            // I used this to map user sentiment to helpful emotional responses in the chatbot.
 
             foreach (var sentiment in sentimentMap)
             {
