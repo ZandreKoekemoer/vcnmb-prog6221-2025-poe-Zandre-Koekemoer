@@ -51,13 +51,13 @@ namespace poePROG6221.Bot
                 if (Interest(input)) continue;
                 if (Confusion(input)) continue;
                 if (Keyword(input)) continue;
-
+                // If no feature matches, give a default response
                 respond("I don’t understand that. Try keywords like 'phishing' or 'password'.", ConsoleColor.Red);
             }
-            //if user enters exit it will close program
+             
             respond("Thanks for chatting. Stay safe!", ConsoleColor.Green);
         }
-
+         // This method initializes all chatbot responses and data
         private void Responses()
         {
             // Reference Stack Overflow. How to create a Dictionary of List<string> in C#.
@@ -113,7 +113,7 @@ namespace poePROG6221.Bot
                 { "malware", "Tip: Keep your software updated and use reliable antivirus tools." },
                 { "scam", "Tip: Be skeptical of deals that sound too good to be true and report suspicious messages." }
             };
-
+            // Stores emotional reactions and supportive replies
             sentimentMap = new Dictionary<string, string>
             {
                 { "worried", "It’s okay to be worried! Cybersecurity can feel complex, but I’m here to help you understand it step-by-step." },
@@ -137,7 +137,7 @@ namespace poePROG6221.Bot
                     var responses = keywordResponses[keyword];
                     var randomResponse = responses[new Random().Next(responses.Count)];
                     Utilities.PrintWithColor(synth, randomResponse, ConsoleColor.Yellow);
-
+                    // Shows a helpful tip after the main answer
                     if (preventionTips.ContainsKey(keyword))
                     {
                         Utilities.PrintWithColor(synth, preventionTips[keyword], ConsoleColor.DarkCyan);
@@ -148,7 +148,7 @@ namespace poePROG6221.Bot
             }
             return false;
         }
-
+        // This method checks for emotional words like “worried” or “frustrated”
         private bool HandleSentiment(string input)
         {
             // Reference C# Corner. Understanding Dictionary in C#.
@@ -166,7 +166,7 @@ namespace poePROG6221.Bot
             }
             return false;
         }
-
+        // This method checks if the user mixes emotions with a topic
         private bool CombinedSentiment(string input)
         {
             foreach (var sentiment in sentimentMap)
@@ -186,14 +186,14 @@ namespace poePROG6221.Bot
 
         private bool Interest(string input)
         {
-            //If user types in this statement with whatever option he chose,the bot will recognize what the user was interested in and stoe it into his memory
+            // If user types “interested in” this will store their topic
             if (input.Contains("interested in"))
             {
                 userInterest = input.Substring(input.IndexOf("interested in") + 13).Trim();
                 Utilities.PrintWithColor(synth, $"Thanks, I’ll remember that you're interested in {userInterest}.", ConsoleColor.Cyan);
                 return true;
             }
-
+             // If user types “remind me” it recalls the previous interest
             if (input.Contains("remind me"))
             {
                 if (!string.IsNullOrEmpty(userInterest))
@@ -205,7 +205,7 @@ namespace poePROG6221.Bot
 
             return false;
         }
-
+        // This method handles when the user is confused or wants more explanation
         private bool Confusion(string input)
         {
             // Reference GeeksForGeeks. String.Contains Method in C#.
